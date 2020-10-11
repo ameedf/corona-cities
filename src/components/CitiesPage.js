@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import AddCases from './AddCases';
 
 class CitiesPage extends Component {
   constructor(props) {
