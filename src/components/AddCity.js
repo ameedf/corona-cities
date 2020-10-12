@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
+import { CITY_ADDED } from '../data/actions';
 import { connect } from 'react-redux';
 
-class AddCases extends Component {
+class AddCity extends Component {
   constructor(props) {
     super(props);
     this.cityNameInput = React.createRef();
@@ -19,7 +20,7 @@ class AddCases extends Component {
       <div>
         City: <input type="text" ref={this.cityNameInput} />
         <br />
-          Cases to add / subtract: <input type="number" ref={this.casesInput} />
+        Cases to add / subtract: <input type="number" ref={this.casesInput} />
         <br />
         <button onClick={() => this.extractData()}>Submit</button>
         <hr />
@@ -35,11 +36,11 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => {
   return {
     addCityData: (cityName, cases) => dispatch({
-      type: "city/added",
+      type: CITY_ADDED,
       cityName: cityName,
       cases: cases
     })
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(AddCases);
+export default connect(mapStateToProps, mapDispatchToProps)(AddCity);

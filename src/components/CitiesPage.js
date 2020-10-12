@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import AddCases from './AddCases';
+import AddCity from './AddCity';
 import CasesPerCityList from './CasesPerCityList';
 import Statistics from './Statistics';
 
@@ -11,12 +11,13 @@ class CitiesPage extends Component {
         <tbody>
           <tr>
             <td colSpan="2">
-              <AddCases />
+              <AddCity />
             </td>
           </tr>
           <tr>
             <td>
               {this.props.cities.length > 0 && <CasesPerCityList />}
+              {this.props.cities.length === 0 && <h1>No cities added yet</h1>}
             </td>
             <td>
               <Statistics />
