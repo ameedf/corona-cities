@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import AddCases from './AddCases';
+import AddCity from './AddCity';
 import CasesPerCityList from './CasesPerCityList';
 import Statistics from './Statistics';
 
@@ -28,7 +28,7 @@ class CitiesPage extends Component {
         <tbody>
           <tr>
             <td colSpan="2">
-              <AddCases addCityData={(cityName, cases) => this.handleAddCases(cityName, cases)} />
+              <AddCity addCityData={(cityName, cases) => this.handleAddCases(cityName, cases)} />
             </td>
           </tr>
           <tr>

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class AddCases extends Component {
+class AddCity extends Component {
   constructor(props) {
     super(props);
     this.cityNameInput = React.createRef();
@@ -27,4 +27,4 @@ class AddCases extends Component {
   }
 }
 
-export default AddCases;
+export default AddCity;
