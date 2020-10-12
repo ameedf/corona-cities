@@ -7,7 +7,7 @@ const initialState = {
 export function citiesReducer(state = initialState, action) {
   switch (action.type) {
     case CITY_ADDED:
-      let newList = [...state.cities];
+      let newList = state.cities.map(c => ({ ...c }));
       const city = newList.find(c => c.name === action.cityName);
       if (city) {
         city.cases += action.cases;
