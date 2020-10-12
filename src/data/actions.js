@@ -1,0 +1,1 @@
+export const CITY_ADDED = 'city/added';

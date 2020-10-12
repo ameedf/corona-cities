@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 class AddCases extends Component {
   constructor(props) {
@@ -10,9 +11,9 @@ class AddCases extends Component {
   extractData() {
     const cityName = this.cityNameInput.current.value.toLowerCase();
     const cases = Number(this.casesInput.current.value);
-
-    this.props.addCityData(cityName, cases)
+    this.props.addCityData(cityName, cases);
   }
+
   render() {
     return (
       <div>
@@ -27,4 +28,18 @@ class AddCases extends Component {
   }
 }
 
-export default AddCases;
+const mapStateToProps = state => ({
+  cities: state.cities,
+})
+
+const mapDispatchToProps = dispatch => {
+  return {
+    addCityData: (cityName, cases) => dispatch({
+      type: "city/added",
+      cityName: cityName,
+      cases: cases
+    })
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(AddCases);

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 class Statistics extends Component {
   numberOfGreenCities() {
@@ -24,4 +25,8 @@ class Statistics extends Component {
   }
 }
 
-export default Statistics;
+const mapStateToProps = state => ({
+  cities: state.cities,
+})
+
+export default connect(mapStateToProps, null)(Statistics);

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 class CasesPerCityList extends Component {
   cityRow(city, index) {
@@ -37,4 +38,8 @@ class CasesPerCityList extends Component {
   }
 }
 
-export default CasesPerCityList;
+const mapStateToProps = state => ({
+  cities: state.cities,
+})
+
+export default connect(mapStateToProps, null)(CasesPerCityList);
