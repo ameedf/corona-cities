@@ -34,6 +34,7 @@ class CitiesPage extends Component {
           <tr>
             <td>
               {this.state.cities.length > 0 && <CasesPerCityList cities={this.state.cities} />}
+              {this.state.cities.length === 0 && <h1>No cities added yet</h1>}
             </td>
             <td>
               <Statistics cities={this.state.cities} />
